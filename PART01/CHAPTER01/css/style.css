@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+a:link,a:visited,a:active,a:hover { text-decoration: none; }
+
+#wrapper {
+  padding: 80px 0;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+.fadeBtn {
+  width: 200px;
+  height: 70px;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 70px;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  background: #ddd;
+  border: #fff 2px solid;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #555;
+}
