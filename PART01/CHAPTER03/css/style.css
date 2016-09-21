@@ -2,7 +2,7 @@
 /* ------------------------------
    DESIGN/LAYOUT ELEMENTS
 ------------------------------ */
-a:link,a:visited,a:active,a:hover { text-decoration: none; color: #000; }
+a:link,a:visited,a:active,a:hover { text-decoration: none; color: #000;}
 
 /* ------------------------------
    CHAPTER ELEMENTS
@@ -11,7 +11,7 @@ a:link,a:visited,a:active,a:hover { text-decoration: none; color: #000; }
   width: 100%;
   height: 45px;
   background: #ebebeb;
-  background: linear-gradient(to bottom, #ebebeb 45%, #d8d8d8 55%);
+  background: linear-gradient(to bottom,  #ebebeb 45%,#d8d8d8 55%);
   border-top: #aaa 1px solid;
   border-bottom: #aaa 1px solid;
   position: relative;
@@ -28,7 +28,27 @@ a:link,a:visited,a:active,a:hover { text-decoration: none; color: #000; }
 #mddNav > ul > li {
   width: 160px;
   height: 45px;
-  text-align: left;
+  float: left;
+  border-left: #aaa 1px solid;
+  box-sizing: border-box;
+}
+
+#mddNav > ul > li:last-child {
+  border-right: #aaa 1px solid;
+}
+
+#mddNav > ul > li > a {
+  height: 45px;
+  font-weight: bold;
+  line-height: 45px;
+  display: block;
+  text-align: center;
+  border: #fff 1px solid;
+  transition: all 0.2s linear;
+}
+
+#mddNav > ul > li:hover > a {
+  background: #fff;
 }
 
 #mddNav .mddWrap {
@@ -38,7 +58,7 @@ a:link,a:visited,a:active,a:hover { text-decoration: none; color: #000; }
   height: 0;
   text-align: center;
   background: #fff;
-  background: linear-gradient(to bottom, #fff 0%, #efefef 100%);
+  background: linear-gradient(to bottom,  #fff 0%,#efefef 100%);
   border-bottom: #aaa 1px solid;
   position: absolute;
   z-index: 10;
@@ -47,3 +67,77 @@ a:link,a:visited,a:active,a:hover { text-decoration: none; color: #000; }
   box-shadow: 0 2px 2px #eee;
 }
 
+#mddNav .mddWrap .mddInner {
+  margin: 0 auto;
+  padding-top: 30px;
+  width: 800px;
+  height: 200px;
+  line-height: 1.5em;
+  text-align: left;
+}
+
+#mddNav .mddWrap .mddInner > div {
+  margin-right: 20px;
+  width: 250px;
+  float: left;
+  border-right: #aaa 1px solid;
+}
+
+#mddNav .mddWrap .mddInner > div:last-child {
+  margin-right: 0;
+  border-right: none;
+}
+
+#mddNav .mddWrap .mddInner > div > ul > li {
+  font-size: 0.8em;
+  line-height: 1.8em;
+}
+
+#mddNav .mddWrap .mddInner > div > ul > li a:link {
+  text-decoration: underline;
+}
+
+#mddNav .mddWrap .mddInner > div > ul > li a:hover {
+  text-decoration: none;
+}
+
+#mddNav .mddWrap .mddInner p {
+  margin-bottom: 20px;
+  padding-left: 10px;
+  line-height: 1.6em;
+  border-left: #000 5px solid;
+}
+
+#mddNav .mddWrap .mddInner p strong {
+  font-size: 1.1em;
+  display: block;
+}
+
+#mddNav .mddWrap .mddInner > div span {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#contents {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 800px;
+  text-align: left;
+}
+
+#contents p {
+  padding-bottom: 2em;
+  font-size: 0.9em;
+  line-height: 1.8em;
+}
+
+/* ------------------------------
+   CLEARFIX ELEMENTS
+------------------------------ */
+#mddNav > ul:before,
+#mddNav > ul:after {
+  content: " ";
+  display: table;
+}
+#mddNav > ul:after {clear: both;}
+#mddNav > ul {*zoom: 1;}
