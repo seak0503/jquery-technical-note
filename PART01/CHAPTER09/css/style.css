@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+#wrapper {
+  margin: 0 auto;
+  padding: 80px 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+.deviceImg {
+  width: 300px;
+}
