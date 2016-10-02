@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+#wrapper {
+  margin: 0 auto;
+  padding: 80px 0;
+  width: 100%;
+  text-align: center;
+}
+
+p {
+  padding: 0 30px;
+  font-weight: bold;
+  text-shadow: 0 0 3px #fff;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+.portrait {
+  background: #6666ff;
+}
+
+.landscape {
+  background: #ff6666;
+}

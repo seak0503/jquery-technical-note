@@ -1,0 +1,67 @@
+﻿@charset "utf-8";
+/* ------------------------------
+   MEDIAQUERIES LAYOUT
+------------------------------ */
+@media only screen and (max-width: 800px) {
+	/* ------------------------------
+	   baseHeader
+	------------------------------ */
+	.baseHeader div {
+		width: 96%;
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+/* ------------------------------
+   MEDIAQUERIES[SP]LAYOUT
+------------------------------ */
+@media only screen and (max-width: 768px) {
+	body {
+		min-width: 320px;
+	}
+
+	#wrapper {
+		margin: 0 auto;
+	}
+
+	/* ------------------------------
+	   baseHeader
+	------------------------------ */
+	.baseHeader div {
+		padding: 15px 0;
+		width: 100%;
+		text-align: center;
+	}
+
+	.baseHeader div h1 {
+		height: 40px;
+		font-size: 1em;
+		line-height: 40px;
+	}
+
+	.baseHeader div a {
+		margin: 0 auto;
+		top: auto;
+		right: auto;
+		width: 60%;
+		position: relative;
+	}
+
+	.baseHeader div a:link,.baseHeader div a:visited,.baseHeader div a:active {
+		text-decoration: none;
+		color: #fff;
+	}
+
+	.baseHeader div a:hover {
+		color: #fff!important;
+		background: #000!important;
+		text-decoration: none!important;
+	}
+
+	/* ------------------------------
+	   baseFooter
+	------------------------------ */
+	.baseFooter {
+		padding: 15px;
+	}
+}
