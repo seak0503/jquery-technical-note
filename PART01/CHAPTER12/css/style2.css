@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+a:link,a:visited,a:active { text-decoration: none; color: #fff;}
+a:hover { text-decoration: none;}
+
+#wrapper {
+  margin: 0 auto;
+  padding: 50px 0;
+  width: 800px;
+  text-align: left;
+}
+
+p {
+  padding-bottom: 1em;
+  font-size: 1em;
+  line-height: 1.8em;
+  text-align: left;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+#fixedTop {
+  padding: 15px 20px;
+  right: 10px;
+  bottom: 10px;
+  color: #fff;
+  text-align: center;
+  display: none;
+  background: #000;
+  position: fixed;
+  z-index: 99;
+}
