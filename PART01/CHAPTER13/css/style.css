@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+#wrapper {
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+.scrEvent {
+  height: 500px;
+  text-align: left;
+  display: none;
+}
+
+.area1 {background: #fff;}
+.area2 {background: #eee;}
+.area3 {background: #ddd;}
+.area4 {background: #ccc;}
+.area5 {background: #bbb;}
+.area6 {background: #aaa;}
+
+p {
+  padding: 100px 0;
+  text-align: center;
+}
