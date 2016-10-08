@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+#wrapper {
+  padding: 80px 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+#randomShow {
+  margin: 0 auto;
+  width: 450px;
+  height: 300px;
+}
+
+.setView1 {
+  background: url(../img/photo1.jpg) no-repeat left top;
+  border: #ff6666 10px solid;
+}
+
+.setView2 {
+  background: url(../img/photo2.jpg) no-repeat left top;
+  border: #6666ff 10px solid;
+}
+
+.setView3 {
+  background: url(../img/photo3.jpg) no-repeat left top;
+  border: #66ff66 10px solid;
+}
+
+.setView4 {
+  background: url(../img/photo4.jpg) no-repeat left top;
+  border: #ffff66 10px solid;
+}
+
+.setView5 {
+  background: url(../img/photo5.jpg) no-repeat left top;
+  border: #66ffcc 10px solid;
+}
