@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+a:link,a:visited,a:active,a:hover { text-decoration: none; color: #000; }
+
+#wrapper {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 800px;
+  text-align: left;
+}
+
+ul {
+  padding-bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+ul li {
+  margin: 0 10px;
+  display: inline-block;
+  border: #555 1px solid;
+}
+
+ul li a {
+  padding: 10px 40px;
+  display: inline-block;
+  overflow: hidden;
+  text-align: left;
+  vertical-align: bottom;
+  border: #fff 1px solid;
+  background: #bbb;
+  background: linear-gradient(to bottom, #fff 50%, #bbb 100%);
+}
+
+ul li a:hover {
+  background: #fff;
+}
+
+ul li a.active {
+  color: #ff0000;
+  font-weight: bold;
+  background: #fff;
+}
+
+p {
+  padding-bottom: 1em;
+  font-size: 1em;
+  line-height: 1.8em;
+  text-align: left;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+body {
+  opacity: 0;
+}
