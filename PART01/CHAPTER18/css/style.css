@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+#wrapper {
+  margin: 0 auto;
+  padding: 80px 0;
+  width: 800px;
+  text-align: center;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+.delayLoad {
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+}
+
+.delayLoad > ul {
+  width: 100%;
+}
+
+.delayLoad > ul > li {
+  margin: 5px;
+  width: 150px;
+  float: left;
+  visibility: hidden;
+}
+
+/* ------------------------------
+   CLEARFIX ELEMENTS
+------------------------------ */
+.delayLoad > ul:before,
+.delayLoad > ul:after {
+  content: " ";
+  display: table;
+}
+.delayLoad > ul:after {clear: both;}
+.delayLoad > ul {*zoom: 1;}
