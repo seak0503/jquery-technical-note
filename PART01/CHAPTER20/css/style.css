@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+#wrapper {
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+.listArea {
+  margin: 0 auto;
+  width: 660px;
+  text-align: center;
+}
+
+.listArea ul {
+  margin: 0 auto;
+  width: 660px;
+  text-align: left;
+}
+
+.listArea ul li {
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  float: left;
+  border: #ccc 5px solid;
+  box-sizing: border-box;
+}
+
+/* ------------------------------
+   CLEARFIX ELEMENTS
+------------------------------ */
+ul:before,
+ul:after {
+  content: " ";
+  display: table;
+}
+ul:after {clear: both;}
+ul {*zoom: 1;}
