@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+.baseHeader {
+  background: none;
+}
+
+.baseFooter {
+  bottom: 0;
+  border-top: none;
+  position: relative;
+}
+
+.baseFooter small {
+  color: #fff;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+#fullScreen {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#fullScreen img {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  visibility: hidden;
+}
+
+#wrapper {
+  margin: 15px auto;
+  padding: 50px;
+  width: 800px;
+  color: #fff;
+  text-align: left;
+  position: relative;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,0.4)
+}
+
+p {
+  padding-bottom: 2em;
+  font-size: 1em;
+  line-height: 1.8em;
+  text-align: left;
+}
