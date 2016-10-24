@@ -14,8 +14,8 @@ $(function () {
         wdHeight = $(window).height();
     $('body').append(
       '<div id="mdOverlay"></div>' +
-      '<div id="mdWindow>' +
-        '<div class="mdClose>×</div>' +
+      '<div id="mdWindow">' +
+        '<div class="mdClose">×</div>' +
         '<div id="contWrap"></div>' +
       '</div>'
     );
