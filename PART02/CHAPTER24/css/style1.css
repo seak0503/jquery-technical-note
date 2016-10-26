@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+a:link, a:visited, a:active, a:hover { text-decoration: none; color: #000; }
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+#globalMenu {
+  width: 100%;
+  height: 45px;
+  background: #ebebeb;
+  background: linear-gradient(to bottom, #ebebeb 45%, #d8d8d8 55%);
+  border-top: #aaa 1px solid;
+  border-bottom: #aaa 1px solid;
+  position: relative;
+  z-index: 10;
+}
+
+#globalMenu ul {
+  margin: 0 auto;
+  width: 800px;
+  height: 45px;
+  text-align: left;
+}
+
+#globalMenu ul li {
+  width: 160px;
+  height: 45px;
+  float: left;
+  border-left: #aaa 1px solid;
+  box-sizing: border-box;
+}
+
+#globalMenu ul li:last-child {
+  border-right: #aaa 1px solid;
+}
+
+#globalMenu ul li a {
+  height: 45px;
+  font-weight: bold;
+  line-height: 45px;
+  display: block;
+  text-align: center;
+  transition: all 0.2s linear;
+}
+
+#globalMenu ul li:hover > a {
+  background: #fff;
+}
+
+#contents {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 800px;
+  text-align: left;
+}
+
+#contents p {
+  padding-bottom: 2em;
+  font-size: 0.9em;
+  line-height: 1.8em;
+}
