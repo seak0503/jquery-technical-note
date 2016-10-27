@@ -62,3 +62,87 @@ a:link, a:visited, a:active, a:hover { text-decoration: none; color: #000; }
   font-size: 0.9em;
   line-height: 1.8em;
 }
+
+/* ------------------------------
+   MEDIAQUERIES LAYOUT
+------------------------------ */
+@media only screen and (max-width: 800px) {
+  #globalMenu ul {
+    width: 100%;
+  }
+
+  #globalMenu ul li {
+    width: 20%;
+  }
+}
+
+/* ------------------------------
+   MEDIAQUERIES[SP]LAYOUT
+------------------------------ */
+@media only screen and (max-width: 768px) {
+  #globalMenu {
+    display: none;
+  }
+
+  #rwdMenuWrap {
+    width: 100%;
+    border-bottom: #aaa 1px solid;
+  }
+
+  #switchBtnArea {
+    width: 100%;
+    height: 60px;
+    background: #3c3c3c;
+    position: relative;
+  }
+
+  #switchBtn {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: #a7a7a7 url(../img/btnOpen.png) no-repeat center;
+    position: absolute;
+  }
+
+  #switchBtn.btnClose {
+    background-image: url(../img/btnClose.png);
+  }
+
+  #rwdMenuWrap ul {
+    width: 100%;
+    display: none;
+  }
+
+  #rwdMenuWrap ul li {
+    width: 100%;
+    border-bottom: #aaa 1px solid;
+  }
+
+  #rwdMenuWrap ul li a {
+    padding: 15px 20px;
+    text-align: left;
+    background: #ebebeb url(../img/linkarw.png) no-repeat right center;
+    display: block;
+  }
+
+  #contents {
+    width: 100%;
+  }
+
+  #contents p {
+    padding: 0 20px 2em 20px;
+  }
+
+}
+
+/* ------------------------------
+   CLEARFIX ELEMENTS
+------------------------------ */
+#globalMenu > ul:before,
+#globalMenu > ul:after {
+  content: " ";
+  display: table;
+}
+#globalMenu > ul:after {clear: both;}
+#globalMenu > ul {*zoom: 1;}
