@@ -31,7 +31,12 @@ $(function () {
 
           switchBtn.on('click', function () {
             if ($(this).hasClass('btnClose')) {
-
+              $(this).removeClass('btnClose').removeAttr('style');
+              menuOverlay.stop().animate({opacity: '0'}, fadeSpeed, function () {
+                menuOverlay.removeAttr('style');
+              });
+              menuWrap.stop().animate({left:'-' + menuWidth + 'px'}, slideSpeed);
+              $('body').removeAttr('style');
             } else {
               $(this).addClass('btnClose').css({position:'fixed'}).stop().animate({left:menuWidth + btnLeft},slideSpeed);
               menuOverlay.css({display: 'block', opacity: '0'}).stop().animate({opacity:'1'}, fadeSpeed);
@@ -40,7 +45,10 @@ $(function () {
             }
           });
         }
-      } else {}
+      } else {
+        $('#menuOverlay, #switchBtnArea, #rwdMenuWrap').remove();
+        $('body').removeAttr('style');
+      }
     }
 
     $(window).on('resize', function () {

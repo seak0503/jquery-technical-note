@@ -90,7 +90,7 @@ a:link, a:visited, a:active, a:hover { text-decoration: none; color: #000; }
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.6);
-    //display: none;
+    display: none;
     position: fixed;
     z-index: 97;
   }
@@ -120,7 +120,7 @@ a:link, a:visited, a:active, a:hover { text-decoration: none; color: #000; }
 
   #rwdMenuWrap {
     top: 0;
-    //left: -200px;
+    left: -200px;
     width: 200px;
     height: 100%;
     background: #3c3c3c;
