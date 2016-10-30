@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+a:link, a:visited, a:active, a:hover { text-decoration: none; color: #000; }
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+#globalMenu {
+  width: 100%;
+  height: 45px;
+  background: #ebebeb;
+  background: linear-gradient(to bottom, #ebebeb 45%, #d8d8d8 55%);
+  border-top: #aaa 1px solid;
+  border-bottom: #aaa 1px solid;
+  position: relative;
+  z-index: 10;
+}
+
+#globalMenu ul {
+  margin: 0 auto;
+  width: 800px;
+  height: 45px;
+  text-align: left;
+}
+
+#globalMenu ul li {
+  width: 160px;
+  height: 45px;
+  float: left;
+  border-left: #aaa 1px solid;
+  box-sizing: border-box;
+}
+
+#globalMenu ul li:last-child {
+  border-right: #aaa 1px solid;
+}
+
+#globalMenu ul li a {
+  height: 45px;
+  font-weight: bold;
+  line-height: 45px;
+  display: block;
+  text-align: center;
+  transition: all 0.2s linear;
+}
+
+#globalMenu ul li:hover > a {
+  background: #fff;
+}
+
+#contents {
+  margin: 0 auto;
+  padding: 40px 0;
+  width: 800px;
+  text-align: left;
+}
+
+#contents p {
+  padding-bottom: 2em;
+  font-size: 0.9em;
+  line-height: 1,8em;
+}
+
+/* ------------------------------
+   MEDIAQUERIES LAYOUT
+------------------------------ */
+@media only screen and (max-width: 800px) {
+  #globalMenu ul {
+    width: 100%;
+  }
+
+  #globalMenu ul li {
+    width: 20%;
+  }
+}
+
+/* ------------------------------
+   MEDIAQUERIES[SP]LAYOUT
+------------------------------ */
+@media only screen and (max-width: 768px) {
+  #globalMenu {
+    display: none;
+  }
+
+  #menuOverlay {
+    top: 0;
+    left 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    //display: none;
+    position: fixed;
+    z-index: 97;
+  }
+
+  #switchBtnArea {
+    width: 100%;
+    height: 60px;
+    background: #3c3c3c;
+    border-bottom: #aaa 1px solid;
+    position: relative;
+  }
+
+  #switchBtn {
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    background: #a7a7a7 url(../img/btnOpen.png) no-repeat center center;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 98;
+  }
+
+  #switchBtn.btnClose {
+    background: transparent url(../img/btnClose.png) no-repeat center center;
+  }
+
+  #rwdMenuWrap {
+    top: 0;
+    //left: -200px;
+    width: 200px;
+    height: 100%;
+    background: #3c3c3c;
+    overflow: auto;
+    position: fixed;
+    z-index: 99;
+  }
+
+  #rwdMenuWrap ul {
+    width: 100%;
+  }
+
+  #rwdMenuWrap ul li {
+    width: 100%;
+    border-bottom: #aaa 1px solid;
+  }
+
+  #rwdMenuWrap ul li a {
+    padding: 15px 20px;
+    text-align: left;
+    background: #ebebeb url(../img/linkarw.png) no-repeat right center;
+    display: block;
+  }
+
+  #contents {
+    width: 100%;
+  }
+
+  #contents p {
+    padding: 0 20px 2em 20px;
+  }
+}
+
+/* ------------------------------
+   CLEARFIX ELEMENTS
+------------------------------ */
+#globalMenu > ul:before,
+#globalMenu > ul:after {
+  content: " ";
+  display: table;
+}
+#globalMenu > ul:after {clear: both;}
+#globalMenu > ul {*zoom: 1;}
