@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+a:link, a:visited, a:active, a:hover { text-decoration: none; }
+
+#wrapper {
+  margin: 0 auto;
+  padding: 80px 0;
+  width: 800px;
+  text-align: left;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+#loadArea {
+  margin: 0 auto;
+  width: 800px;
+  text-align: left;
+}
+
+#loadArea a {
+  margin: 0 5px 10px 5px;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  transition: all 0.2s linear;
+}
+
+#loadArea a:hover {
+  opacity: 0.6;
+}
+
+#loadArea img {
+  width: 150px;
+  opacity: 0;
+}
+
+#moreBtn {
+  margin: 20px auto;
+  padding: 15px 0;
+  width: 800px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  background: #777;
+  transition: all 0.2s linear;
+}
+
+#moreBtn:hover {
+  background: #999;
+}
+
+
