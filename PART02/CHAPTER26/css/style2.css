@@ -53,4 +53,44 @@ a:link, a:visited, a:active, a:hover { text-decoration: none; }
   background: #999;
 }
 
+/* ModalWindow
+--------------------------- */
+#mdOverlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  position: fixed;
+  z-index: 97;
+  display: none;
+}
+
+#mdWindow {
+  margin-top: -200px;
+  margin-left: -300px;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 400px;
+  background: #fff;
+  position: fixed;
+  z-index: 98;
+  display: none;
+}
+
+#mdWindow > .mdClose {
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 1.5em;
+  background: #757575;
+  border-radius: 30px;
+  position: absolute;
+  z-index: 99;
+  cursor: pointer;
+  box-shadow: 0 0 3px 0 #000;
+}
 
