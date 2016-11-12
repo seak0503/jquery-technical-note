@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+#wrapper {
+  margin: 0 auto;
+  padding: 100px 0;
+  width: 800px;
+  text-align: left;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+.slidePanel {
+  margin: 0 auto;
+  width: 600px;
+  height: 200px;
+  text-align: left;
+  position: relative;
+}
+
+.slideWrap {
+  width: 600px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slidePanel ul {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.slidePanel ul li {
+  padding: 0 10px;
+  width: 200px;
+  text-align: center;
+  float: left;
+  display: inline;
+  box-sizing: border-box;
+}
+
+.slidePanel ul li p {
+  padding: 5px 0;
+  font-size: 12px;
+}
+
+/* SideNavi
+------------------------- */
+.slidePanel .btnPrev,
+.slidePanel .btnNext {
+  top: 45px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+}
+
+.slidePanel .btnPrev {
+  left: -35px;
+  background: transparent url(../img/btnPrev.png) no-repeat top left;
+}
+
+.slidePanel .btnNext {
+  right: -35px;
+  background: transparent url(../img/btnNext.png) no-repeat top left;
+}
+
+.slidePanel .btnPrev:hover,
+.slidePanel .btnNext:hover {
+  opacity: 0.6;
+}
+
+/* PagiNation
+--------------------------- */
+
+/* ------------------------------
+   CLEARFIX ELEMENTS
+------------------------------ */
+.slidePanel ul:before,
+.slidePanel ul:after {
+  content: " ";
+  display: table;
+}
+.slidePanel ul:after {clear: both;}
+.slidePanel ul {*zoom: 1;}

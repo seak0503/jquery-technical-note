@@ -27,13 +27,33 @@ $(function () {
           btnPrev = self.find('.btnPrev');
 
       btnNext.click(function () {
-        selfUl.not(':animated').animate({left: '-=' + (listWidth)}, slideSpeed);
+        selfUl.not(':animated').animate({left: '-=' + (listWidth)}, slideSpeed, function () {
+          btnSet();
+        });
       });
 
       btnPrev.click(function () {
-        selfUl.not(':animated').animate({left: '+=' + (listWidth)}, slideSpeed);
+        selfUl.not(':animated').animate({left: '+=' + (listWidth)}, slideSpeed, function () {
+          btnSet();
+        });
       });
-    }
 
+      function btnSet() {
+        var ulLeft = parseInt(selfUl.css('left')),
+            maskWidth = selfWidth - slideWidth;
+
+        if (ulLeft == 0) {
+          btnNext.css({display: 'block'});
+          btnPrev.css({display: 'none'});
+        } else if (ulLeft <= maskWidth) {
+          btnNext.css({display: 'none'});
+          btnPrev.css({display: 'block'});
+        } else {
+          btnNext.css({display: 'block'});
+          btnPrev.css({display: 'block'});
+        }
+      }
+      btnSet();
+    }
   });
 });
