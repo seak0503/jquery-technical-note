@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+#wrapper {
+  margin: 0 auto;
+  padding: 100px 0;
+  width: 800px;
+  text-align: left;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+.loopSliderWrap {}
+
+.loopSlider {
+  margin: 0 auto;
+  width: 500px;
+  height: 100px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.loopSlider ul {
+  height: 100px;
+  float: left;
+  overflow: hidden;
+}
+
+.loopSlider ul li {
+  width: 100px;
+  height: 100px;
+  float: left;
+  display: inline;
+  overflow: hidden;
+}
+
+/* ------------------------------
+   CLEARFIX ELEMENTS
+------------------------------ */
+.loopSliderWrap:before,
+.loopSliderWrap:after,
+.loopSlider ul:before,
+.loopSlider ul:after {
+  content: " ";
+  display: table;
+}
+.loopSliderWrap:after,
+.loopSlider ul:after {clear: both;}
+.loopSliderWrap,
+.loopSlider ul {*zoom: 1;}
