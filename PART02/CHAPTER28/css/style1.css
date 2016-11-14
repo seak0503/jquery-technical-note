@@ -12,8 +12,6 @@
 /* ------------------------------
    CHAPTER ELEMENTS
 ------------------------------ */
-.loopSliderWrap {}
-
 .loopSlider {
   margin: 0 auto;
   width: 500px;
@@ -21,6 +19,14 @@
   text-align: left;
   position: relative;
   overflow: hidden;
+}
+
+.loopSliderWrap {
+  top: 0;
+  left: 0;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
 }
 
 .loopSlider ul {
