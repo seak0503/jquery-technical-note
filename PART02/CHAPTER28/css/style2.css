@@ -21,7 +21,13 @@
   overflow: hidden;
 }
 
-.loopSliderWrap {}
+.loopSliderWrap {
+  top: 0;
+  left: 0;
+  width: 100px;
+  overflow: hidden;
+  position: absolute;
+}
 
 .loopSlider ul {
   width: 100px;
