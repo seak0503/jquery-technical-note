@@ -27,6 +27,49 @@ $(function () {
         areaHeight();
       })
       areaHeight();
+
+      findLi.each(function (i) {
+        $(this).attr('class', 'viewList' + (i + 1));
+      });
+
+      findLiFirst.addClass('mainActive').css({zIndex: '100'}).stop().animate({opacity: '1'}, fadeSpeed);
+
+      if (findLiCount > 1) {
+        // ページネーション
+        var pagination = $('<div class="pagiNation"></div>')
+        self.append(pagination);
+
+        findLi.each(function (i) {
+          pagination.append('<a href="javascript:void(0);" class="pn' + (i+1) + '"></a>');
+        });
+
+        var pnPoint = pagination.find('a'),
+        pnFirst = pagination.find('a:first'),
+        pnLast = pagination.find('a:last'),
+        pnCount = pagination.find('a').length;
+
+        pnFirst.addClass('pnActive');
+
+        pnPoint.click(function () {
+          var setNum = pnPoint.index(this),
+          showCont = setNum + 1;
+          findUl.find('.viewList' + (showCont))
+            .addClass('mainActive').stop()
+            .animate({opacity: '1'}, fadeSpeed, function () {
+              $(this).css({zIndex: '100'});
+            })
+            .siblings().removeClass('mainActive').stop()
+            .animate({opacity:'0'}, fadeSpeed, function () {
+              $(this).css({zIndex: '99'});
+            });
+          pnPoint.removeClass('pnActive');
+          $(this).addClass('pnActive');
+        });
+
+
+
+
+      }
     })
   })
 })
