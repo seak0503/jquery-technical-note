@@ -78,23 +78,45 @@ p {
   background: #aaa;
   border: #fff 2px solid;
   border-radius: 50%;
+  transition: all 0.2s ease-in-out;
 }
 
-.pagiNation a:hover {}
+.pagiNation a:hover {
+  opacity: 0.6;
+}
 
-.pagiNation a.pnActive {}
+.pagiNation a.pnActive {
+  background: #000;
+}
 
-.pagiNation a.pnActive:hover {}
+.pagiNation a.pnActive:hover {
+  opacity: 1;
+}
 
 /* SideNavi
 ------------------------- */
 .slideShow .btnPrev,
 .slideShow .btnNext {
+  margin-top: -25px;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 105;
+  transition: all 0.2s ease-in-out;
 }
 
-.slideShow .btnPrev {}
+.slideShow .btnPrev {
+  left: 15px;
+  background: transparent url(../img/btnPrev.png) no-repeat center center;
+}
 
-.slideShow .btnNext {}
+.slideShow .btnNext {
+  right: 15px;
+  background: transparent url(../img/btnNext.png) no-repeat center center;
+}
 
 .slideShow .btnPrev:hover,
-.slideShow .btnNext:hover {}
+.slideShow .btnNext:hover {
+  opacity: 0.6;
+}

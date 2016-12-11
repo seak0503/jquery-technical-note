@@ -66,6 +66,45 @@ $(function () {
           $(this).addClass('pnActive');
         });
 
+        // サイドナビボタン
+        self.append(
+          '<a href="javascript:void(0);" class="btnPrev"></a>' +
+          '<a href="javascript:void(0);" class="btnNext"></a>'
+        );
+        var btnNext = self.find('.btnNext'),
+            btnPrev = self.find('.btnPrev');
+
+        function switchNext() {
+          var setActive = pagination.find('.pnActive'),
+              pnIndex = pnPoint.index(setActive),
+              pnNum = pnIndex + 1;
+
+          if (pnCount == pnNum) {
+            pnFirst.click();
+          } else {
+            setActive.next('a').click();
+          }
+        }
+
+        function switchPrev() {
+          var setActive = pagination.find('.pnActive'),
+              pnIndex = pnPoint.index(setActive),
+              pnNum = pnIndex + 1;
+
+          if (1 == pnNum) {
+            pnLast.click();
+          } else {
+            setActive.prev('a').click();
+          }
+        }
+
+        btnNext.click(function () {
+          switchNext();
+        });
+        btnPrev.click(function () {
+          switchPrev();
+        });
+
 
 
 
