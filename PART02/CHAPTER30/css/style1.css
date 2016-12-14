@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* ------------------------------
+   DESIGN/LAYOUT ELEMENTS
+------------------------------ */
+a:link, a:visited, a:active { text-decoration: underline; color: #000; }
+a:hover { text-decoration: none; }
+
+#wrapper {
+  margin: 0 auto;
+  padding-bottom: 20px;
+  width: 800px;
+  text-align: left;
+}
+
+p {
+  padding-bottom: 2em;
+  font-size: 1em;
+  line-height: 1.8em;
+  text-align: left;
+}
+
+/* ------------------------------
+   CHAPTER ELEMENTS
+------------------------------ */
+.slider {
+  margin: 0 auto;
+  width: 800px;
+  text-align: left;
+  position: relative;
+  //visibility: hidden;
+}
+
+.slider ul,
+.slider ul li {
+  float: left;
+  display: inline;
+  overflow: hidden;
+}
+
+.slider ul li img {
+  width: 100%;
+}
+
+.sliderCover {}
+
+.sliderWrap {}
+
+/* PagiNation
+--------------------------- */
+.pagiNation {}
+
+.pagiNation a {}
+
+.pagiNation a:hover {}
+
+.pagiNation a.pnActive:hover {}
+
+.pagiNation a.pnActive {}
+
+/* SideNavi
+------------------------- */
+.slider .btnPrev,
+.slider .btnNext {}
+
+.slider .btnPrev {}
+
+.slider .btnNext {}
+
+.slider .btnPrev:hover,
+.slider .btnNext:hover {}
+
+/* ------------------------------
+   CLEARFIX ELEMENTS
+------------------------------ */
+.slider ul:before,
+.slider ul:after,
+.sliderWrap:before,
+.sliderWrap:after {
+  content: " ";
+  display: table;
+}
+.slider ul:after,
+.sliderWrap:after {clear: both;}
+.slider ul,
+.sliderWrap {*zoom: 1;}
