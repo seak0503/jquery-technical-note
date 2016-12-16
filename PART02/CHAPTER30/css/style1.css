@@ -22,12 +22,25 @@ p {
 /* ------------------------------
    CHAPTER ELEMENTS
 ------------------------------ */
+.sliderCover {
+  margin-bottom: 30px;
+  width: 100%;
+  overflow: hidden;
+}
+
 .slider {
   margin: 0 auto;
   width: 800px;
   text-align: left;
   position: relative;
-  //visibility: hidden;
+  visibility: hidden;
+}
+
+.sliderWrap {
+  top: 0;
+  left: 0;
+  position: absolute;
+  overflow: hidden;
 }
 
 .slider ul,
@@ -41,9 +54,7 @@ p {
   width: 100%;
 }
 
-.sliderCover {}
 
-.sliderWrap {}
 
 /* PagiNation
 --------------------------- */
