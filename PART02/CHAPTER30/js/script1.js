@@ -49,6 +49,10 @@ $(function () {
 
         var baseWrapWidth = imgWidth * findLiCount,
             allLWrapWidth = imgWidth * allListCount;
+        // デバッグ
+        console.log("baseWrapWidth: "+ baseWrapWidth);
+        console.log("allLWrapWidth: " + allLWrapWidth);
+        //
 
         findWrap.css({left: -(baseWrapWidth), width: allLWrapWidth, height: imgHeight});
         findWrap.find('ul').css({width: baseWrapWidth, height: imgHeight});
@@ -94,6 +98,73 @@ $(function () {
             btnPrev = self.find('.btnPrev'),
             posResetNext = -(baseWrapWidth) * 2,
             posResetPrev = -(baseWrapWidth) + (imgWidth);
+        //デバッグ
+        console.log("posResetNext: " + posResetNext);
+        console.log("posResetPrev: " + posResetPrev);
+        //
+
+        function sideNavSize() {
+          var slideWidth = self.width(),
+              btnSize = ($(window).width() - slideWidth) / 2;
+          if ($(window).width() > slideWidth) {
+            btnNext.css({right: -btnSize, width: btnSize, height: imgHeight});
+            btnPrev.css({left: -btnSize, width: btnSize, height: imgHeight});
+          }
+        }
+        sideNavSize();
+
+        $(window).on('resize', function () {
+          sideNavSize();
+        });
+
+        function slideNext() {
+          findWrap.not(':animated').each(function () {
+            //timerStop();
+            var posLeft = parseInt(findWrap.css('left')),
+                moveLeft = posLeft - imgWidth;
+            findWrap.stop().animate({left: (moveLeft)}, slideSpeed, slideEasing, function () {
+              var adjustLeft = parseInt(findWrap.css('left'));
+              if (adjustLeft <= posResetNext) {
+                findWrap.css({left: -(baseWrapWidth)});
+              }
+            });
+
+            var setActive = pagination.find('.pnActive'),
+                pnIndex = pnPoint.index(setActive),
+                listCount = pnIndex + 1;
+
+            if (pnCount == listCount) {
+              setActive.removeClass('pnActive');
+              pnFirst.addClass('pnActive');
+            } else {
+              setActive.removeClass('pnActive').next().addClass('pnActive');
+            }
+
+            activePos();
+            //timerStart();
+          });
+        }
+
+        function slidePrev() {
+          findWrap.not(':animated').each(function () {
+            //timerStop();
+            var posLeft = parseInt(findWrap.css('left')),
+                moveLeft = posLeft + imgWidth;
+            findWrap.stop().animate({left: (moveLeft)}, slideSpeed, slideEasing, function () {
+              var adjustLeft = parseInt(findWrap.css('left'));
+              if (adjustLeft >= posResetPrev) {
+                findWrap.css({left: posResetNext + imgWidth});
+              }
+            });
+          });
+        }
+
+        btnNext.click(function () {
+          slideNext();
+        });
+        btnPrev.click(function () {
+          slidePrev();
+        });
       }
     });
   });

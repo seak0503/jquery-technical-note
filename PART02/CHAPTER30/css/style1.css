@@ -94,14 +94,29 @@ p {
 /* SideNavi
 ------------------------- */
 .slider .btnPrev,
-.slider .btnNext {}
+.slider .btnNext {
+  top: 0;
+  position: absolute;
+  z-index: 105;
+}
 
-.slider .btnPrev {}
+.slider .btnPrev {
+  left: 0;
+  background: url(../img/btnPrev.png) no-repeat center right;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
-.slider .btnNext {}
+.slider .btnNext {
+  right: 0;
+  background: url(../img/btnNext.png) no-repeat center left;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
 .slider .btnPrev:hover,
-.slider .btnNext:hover {}
+.slider .btnNext:hover {
+  transition: all 0.3s linear;
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 /* ------------------------------
    CLEARFIX ELEMENTS
