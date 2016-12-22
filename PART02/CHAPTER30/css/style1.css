@@ -33,7 +33,7 @@ p {
   width: 800px;
   text-align: left;
   position: relative;
-  //visibility: hidden;
+  visibility: hidden;
 }
 
 .sliderWrap {
@@ -53,8 +53,6 @@ p {
 .slider ul li img {
   width: 100%;
 }
-
-
 
 /* PagiNation
 --------------------------- */

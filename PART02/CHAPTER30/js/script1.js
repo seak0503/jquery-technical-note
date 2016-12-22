@@ -73,14 +73,14 @@ $(function () {
         pnFirst.addClass('pnActive');
 
         pnPoint.click(function () {
-          //timerStop();
+          timerStop();
           var showCont = pnPoint.index(this),
               moveLeft = (imgWidth * showCont) + baseWrapWidth;
           findWrap.stop().animate({left: -(moveLeft)}, slideSpeed, slideEasing);
           pnPoint.removeClass('pnActive');
           $(this).addClass('pnActive');
           activePos();
-          //timerStart();
+          timerStart();
         });
 
         function activePos() {
@@ -119,7 +119,7 @@ $(function () {
 
         function slideNext() {
           findWrap.not(':animated').each(function () {
-            //timerStop();
+            timerStop();
             var posLeft = parseInt(findWrap.css('left')),
                 moveLeft = posLeft - imgWidth;
             findWrap.stop().animate({left: (moveLeft)}, slideSpeed, slideEasing, function () {
@@ -141,13 +141,13 @@ $(function () {
             }
 
             activePos();
-            //timerStart();
+            timerStart();
           });
         }
 
         function slidePrev() {
           findWrap.not(':animated').each(function () {
-            //timerStop();
+            timerStop();
             var posLeft = parseInt(findWrap.css('left')),
                 moveLeft = posLeft + imgWidth;
             findWrap.stop().animate({left: (moveLeft)}, slideSpeed, slideEasing, function () {
@@ -156,6 +156,19 @@ $(function () {
                 findWrap.css({left: posResetNext + imgWidth});
               }
             });
+
+            var setActive = pagination.find('.pnActive'),
+                pnIndex = pnPoint.index(setActive),
+                listCount = pnIndex + 1;
+            if (1 == listCount) {
+              setActive.removeClass('pnActive');
+              pnLast.addClass('pnActive');
+            } else {
+              setActive.removeClass('pnActive').prev().addClass('pnActive');
+            }
+
+            activePos();
+            timerStart();
           });
         }
 
@@ -165,6 +178,19 @@ $(function () {
         btnPrev.click(function () {
           slidePrev();
         });
+
+        function timerStart() {
+          slideTimer = setInterval(function () {
+            slideNext();
+          }, slideDelay);
+        }
+        timerStart();
+
+        function timerStop() {
+          clearInterval(slideTimer);
+        }
+
+        self.css({visibility: 'visible', opacity: '0'}).animate({opacity: '1'}, openingFade);
       }
     });
   });
