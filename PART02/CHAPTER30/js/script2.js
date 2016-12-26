@@ -191,6 +191,33 @@ $(function () {
         btnPrev.click(function () {
           slidePrev();
         });
+
+        // タッチ（スワイプ／フリック）イベント
+        findWrap.on({
+          'touchstart': function (e) {
+            if (findWrap.is(':animated')) {
+              e.preventDefault();
+            } else {
+              //timerStop();
+              startPosX = event.changedTouches[0].pageX;
+              startPosLeft = parseInt($(this).css('left'));
+              touchState = true;
+            }
+          },
+          'touchmove': function (e) {
+            if (!touchState) {
+              return false
+            }
+            e.preventDefault();
+
+            var slidePosLeft = startPosLeft - (startPosX - event.changedTouches[0].pageX);
+            console.log('startPosLeft: ' + startPosLeft);
+            console.log('startPosX: ' + startPosX);
+            console.log('changedTouches: ' + event.changedTouches[0].pageX);
+            console.log('slidePosLeft: ' + slidePosLeft);
+            $(this).css({left: slidePosLeft});
+          }
+        });
       }
       self.css({visibility: 'visible', opacity: '0'}).animate({opacity: '1'}, openingFade);
     });
