@@ -264,6 +264,18 @@ $(function () {
         }
       }
       self.css({visibility: 'visible', opacity: '0'}).animate({opacity: '1'}, openingFade);
+
+      $(window).on('load resize', function () {
+        timerStop();
+        setSlideSize();
+
+        var posActive = pagination.find('.pnActive'),
+            setNum = pnPoint.index(posActive),
+            moveLeft = ((imgWidth) * (setNum)) + baseWrapWidth;
+        findWrap.css({left: -(moveLeft)});
+
+        timerStart();
+      });
     });
   });
 });
