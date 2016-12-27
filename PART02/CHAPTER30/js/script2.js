@@ -87,14 +87,14 @@ $(function () {
         pnFirst.addClass('pnActive');
 
         pnPoint.click(function () {
-          //timerStop();
+          timerStop();
           var showCont = pnPoint.index(this),
               moveLeft = (imgWidth * showCont) + baseWrapWidth;
           findWrap.stop().animate({left: -(moveLeft)}, slideSpeed, slideEasing);
           pnPoint.removeClass('pnActive');
           $(this).addClass('pnActive');
           activePos();
-          //timerStart();
+          timerStart();
         });
 
         function movePnNext() {
@@ -151,7 +151,7 @@ $(function () {
 
         function slideNext() {
           if (!findWrap.is(':animated')) {
-            //timerStop();
+            timerStop();
             var posLeft = parseInt($(findWrap).css('left')),
                 moveLeft = posLeft - imgWidth;
             findWrap.stop().animate({left: moveLeft}, slideSpeed, slideEasing, function () {
@@ -163,13 +163,13 @@ $(function () {
 
             movePnNext();
             activePos();
-            //1timerStart();
+            timerStart();
           }
         }
 
         function slidePrev() {
           if (!findWrap.is(':animated')) {
-            //timerStop();
+            timerStop();
             var posLeft = parseInt($(findWrap).css('left')),
                 moveLeft = posLeft + imgWidth;
             findWrap.stop().animate({left: moveLeft}, slideSpeed, slideEasing, function () {
@@ -181,7 +181,7 @@ $(function () {
 
             movePnPrev();
             activePos();
-            //timerStart();
+            timerStart();
           }
         }
 
@@ -198,7 +198,7 @@ $(function () {
             if (findWrap.is(':animated')) {
               e.preventDefault();
             } else {
-              //timerStop();
+              timerStop();
               startPosX = event.changedTouches[0].pageX;
               startPosLeft = parseInt($(this).css('left'));
               touchState = true;
@@ -216,8 +216,52 @@ $(function () {
             console.log('changedTouches: ' + event.changedTouches[0].pageX);
             console.log('slidePosLeft: ' + slidePosLeft);
             $(this).css({left: slidePosLeft});
+          },
+          'touchend': function (e) {
+            if (!touchState) {
+              return false
+            }
+            touchState = false;
+
+            var leftPos = parseInt($(this).css('left'));
+
+            if (startPosLeft > leftPos) {
+              var moveLeft = startPosLeft - imgWidth;
+              findWrap.stop().animate({left: moveLeft},slideSpeed, slideEasing, function () {
+                var adjustLeft = parseInt($(findWrap).css('left'));
+                if (adjustLeft <= posResetNext) {
+                  findWrap.css({left: -(baseWrapWidth)});
+                }
+              });
+
+              movePnNext();
+            } else if (startPosLeft < leftPos) {
+              var moveLeft = startPosLeft + imgWidth;
+              findWrap.stop().animate({left: moveLeft}, slideSpeed, slideEasing, function () {
+                var adjustLeft = parseInt($(findWrap).css('left'));
+                if (adjustLeft >= posResetPrev) {
+                  findWrap.css({left: posResetNext + imgWidth});
+                }
+              });
+
+              movePnPrev();
+
+            }
+            activePos();
+            timerStart();
           }
         });
+
+        function timerStart() {
+          slideTimer = setInterval(function () {
+            slideNext();
+          }, slideDelay);
+        }
+        timerStart();
+
+        function timerStop() {
+          clearInterval(slideTimer);
+        }
       }
       self.css({visibility: 'visible', opacity: '0'}).animate({opacity: '1'}, openingFade);
     });
